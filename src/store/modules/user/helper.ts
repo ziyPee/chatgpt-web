@@ -13,11 +13,15 @@ export interface UserState {
 }
 
 export function defaultSetting(): UserState {
+  const emptyGIF = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs='
   return {
     userInfo: {
-      avatar: 'https://raw.githubusercontent.com/Chanzhaoyu/chatgpt-web/main/src/assets/avatar.jpg',
-      name: 'ChenZhaoYu',
-      description: 'Star on <a href="https://github.com/Chanzhaoyu/chatgpt-bot" class="text-blue-500" target="_blank" >GitHub</a>',
+      // avatar: 'https://raw.githubusercontent.com/Chanzhaoyu/chatgpt-web/main/src/assets/avatar.jpg',
+      // name: 'ChenZhaoYu',
+      // description: 'Star on <a href="https://github.com/Chanzhaoyu/chatgpt-bot" class="text-blue-500" target="_blank" >GitHub</a>',
+      avatar: import.meta.env.VITE_WEB_AVATAR || emptyGIF,
+      name: import.meta.env.VITE_WEB_NAME || 'Anonymous',
+      description: 'Star on <a href="https://github.com/ziyPee/chatgpt-web" class="text-blue-500" target="_blank">Github</a>',
     },
   }
 }
